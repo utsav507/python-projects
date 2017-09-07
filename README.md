@@ -1,6 +1,6 @@
 # python-projects
 
-Intermediate-level Projects in Python
+## Intermediate-level Projects in Python
 
 1. Blackjack
 2. Caeser Cipher Alogrithm

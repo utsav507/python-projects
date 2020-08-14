@@ -251,7 +251,7 @@ def stand():
 			playing = False
 
 		# Push
-		elif dealer_hand.calc_val == player_hand.calc_val():
+		elif dealer_hand.calc_val() == player_hand.calc_val():
 			result = 'Tied up, push!' + restart_phrase
 			playing = False
 

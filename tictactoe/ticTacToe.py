@@ -69,15 +69,16 @@ def place_marker(board, marker, position):
 	board[position] = marker
 
 # Function to check if player has won
-def win_check(board, mark):	
-	return ((board[1] == mark and board[2] == mark and board[3] == mark) or		# Horizontal Bottom
-			(board[4] == mark and board[5] == mark and board[6] == mark) or		# Horizontal Middle
-			(board[7] == mark and board[8] == mark and board[9] == mark) or		# Horizontal Top
-			(board[7] == mark and board[4] == mark and board[1] == mark) or		# Vertical Left
-			(board[8] == mark and board[5] == mark and board[2] == mark) or		# Vertical Middle
-			(board[9] == mark and board[6] == mark and board[3] == mark) or		# Vertical Right
-			(board[7] == mark and board[5] == mark and board[3] == mark) or		# Diagonal Left to Right Bottom
-			(board[9] == mark and board[5] == mark and board[1] == mark))		# Diagonal Right to Left Bottom
+def win_check(board, mark):
+	solution = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+	for combinations in solution:
+		check_combination = True
+		for i in combinations:
+			if board[i] != mark:
+				check_combination = False
+		if check_combination:
+			return True
+	return False
 
 # Function to decide which player goes first
 import random
